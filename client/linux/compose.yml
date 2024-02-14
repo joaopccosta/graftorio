@@ -1,0 +1,8 @@
+services:
+  exporter:
+    image: prom/node-exporter
+    command: --collector.disable-defaults --collector.textfile --collector.textfile.directory=/textfiles
+    volumes:
+      - ~/bin/factorio/script-output/graftorio2:/textfiles # Linux
+    ports:
+      - 9100:9100
